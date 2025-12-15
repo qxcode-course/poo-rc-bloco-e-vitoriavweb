@@ -1,0 +1,26 @@
+2025-12-10 10:28:41, MOVE, v:1, k:poo@pagamento, mode:PICK
+2025-12-10 10:28:43, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-10 10:28:43, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-10 10:28:43, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-10 10:28:44, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-10 10:28:44, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-10 10:28:44, MOVE, v:1, k:poo@pagamento, mode:BACK
+2025-12-10 10:29:17, MOVE, v:1, k:poo@pagamento, mode:PICK
+2025-12-10 10:29:18, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-10 10:29:19, MOVE, v:1, k:poo@pagamento, mode:BACK
+2025-12-10 10:29:24, MOVE, v:1, k:poo@estacionamento, mode:DOWN
+2025-12-10 11:22:29, MOVE, v:1, k:poo@cofre, mode:DOWN
+2025-12-10 11:22:30, MOVE, v:1, k:poo@cofre, mode:PICK
+2025-12-10 11:23:20, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0, size:0
+2025-12-10 11:23:21, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:22, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:23, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:24, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:26, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:27, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:28, EXEC, v:1, k:poo@cofre, mode:FULL, rate:0
+2025-12-10 11:23:28, MOVE, v:1, k:poo@cofre, mode:BACK
+2025-12-10 11:24:02, MOVE, v:1, k:poo@shapes, mode:DOWN
+2025-12-10 11:24:05, MOVE, v:1, k:poo@estacionamento, mode:PICK
+2025-12-10 11:24:08, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:22
+2025-12-10 11:24:10, MOVE, v:1, k:poo@estacionamento, mode:BACK
