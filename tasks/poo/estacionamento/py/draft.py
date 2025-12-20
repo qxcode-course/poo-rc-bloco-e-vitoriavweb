@@ -1,4 +1,3 @@
-from datetime import datetime
 from abc import ABC, abstractmethod
 
 class Veiculo(ABC):
@@ -7,10 +6,10 @@ class Veiculo(ABC):
         self.tipo = tipo 
         self.horaentrada = None
 
-    def setentrada (self, horaentrada: datetime ):
+    def setentrada (self, horaentrada: int):
         self.horaentrada = horaentrada
 
-    def getentrada(self) -> datetime:
+    def getentrada(self) -> int:
         return self.horaentrada
     
     def gettipo(self) -> str:
@@ -20,49 +19,51 @@ class Veiculo(ABC):
         return self.id
     
     @abstractmethod
-    def calcularvalor(self, horasaida: datetime):
+    def calcularvalor(self, horasaida: int):
         pass
 
     def __str__(self):
-        he = self.horaentrada
-        he_str = he.strftime("%Y-%m-%d %H:%M:%S") if he else "não registrado"
-        return f"{self.tipo} (id={self.id}) - entrada: {he_str}"
-    
+        pass
+
 class Bike(Veiculo):
-    def __init__(self, id: str):
-        super().__init__(id, "Bike")
+    def __init__(self, id:str):
+        super().__init__(id)
 
     def calcularvalor(self, horasaida):
         if self.horaentrada is None:
-            raise ValueError("nao tem hora")
+            print("nao bike")
         return 3.0
     
 class Moto(Veiculo):
-    def __init__(self, id:str):
-        super().__init__(id, "Moto")
+    def __init__(self, id: str):
+        super().__init__(id)
 
     def calcularvalor(self, horasaida):
         if self.horaentrada is None:
-            raise ValueError ("BURRO MDS")
-        tempo = horasaida - self.horaentrada
-        min = max(0, int(tempo.total_seconds()//60))
-        valor = min/20
-        return (valor)
+            print("nao moto")
+        tempo = (horasaida-self.horaentrada)/20
+        return (tempo)
     
 class Carro(Veiculo):
     def __init__(self, id:str):
-        super().__init__(id, "Carro")
+        super().__init__(id )
 
     def calcularvalor(self, horasaida):
         if self.horaentrada is None:
-            raise ValueError ("BURRO MDS")
-        tempo = horasaida-self.horaentrada
-        min = max(0, int(tempo.total_seconds()//60))
-        valor = min/10
-        if valor <5:
-            valor = 5
-        return (valor)
+            print("nao carro")
+        tempo = (horasaida-self.horaentrada)/10
+        if tempo <5:
+            tempo=5
+        return (tempo)
+
+class Estacionamento:
+    def __init__(self):
+        self.veiculos = []
+        self.horaatual = None
+
     
+'''   
+  
 class Estacionamento:
     def __init__(self):
         self.veiculos = []
@@ -100,7 +101,7 @@ class Estacionamento:
         valor = v.calcularvalor(saida)
         print(f"{v.gettipo()} chegou {entrada} saiu {saida}. Pagar R$ {valor:.2f}")
 
-
+ '''
 def main():
     estacionamento = Estacionamento()
 
