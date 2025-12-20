@@ -1,3 +1,31 @@
 2025-12-19 21:08:06, MOVE, v:1, k:poo@estacionamento, mode:PICK
 2025-12-19 21:08:08, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:135
 2025-12-19 21:08:24, MOVE, v:1, k:poo@estacionamento, mode:BACK
+2025-12-19 21:30:55, MOVE, v:1, k:poo@estacionamento, mode:PICK
+2025-12-19 21:30:56, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:115
+2025-12-19 21:31:55, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:115
+2025-12-19 21:32:13, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:115
+2025-12-19 21:33:04, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:115
+2025-12-19 21:33:11, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:115
+2025-12-19 21:33:23, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:115
+2025-12-19 21:33:31, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0
+2025-12-19 21:53:26, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:109
+2025-12-19 22:01:01, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:109
+2025-12-19 22:01:03, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0
+2025-12-19 22:06:05, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:109
+2025-12-19 22:06:06, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0
+2025-12-19 22:06:06, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0
+2025-12-19 22:06:06, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0
+2025-12-19 22:09:16, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:118
+2025-12-19 22:10:01, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:118
+2025-12-19 22:12:37, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:121
+2025-12-19 22:18:42, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:122
+2025-12-19 22:21:05, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:0, size:122
+2025-12-19 22:31:20, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:25, size:130
+2025-12-19 22:31:20, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:25, size:130
+2025-12-19 22:32:26, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:25, size:129
+2025-12-19 22:37:52, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:75, size:129
+2025-12-19 23:10:08, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:75, size:129
+2025-12-19 23:12:17, EXEC, v:1, k:poo@estacionamento, mode:FULL, rate:100, size:130
+2025-12-19 23:14:11, MOVE, v:1, k:poo@estacionamento, mode:BACK
+2025-12-19 23:15:26, SELF, v:1, k:poo@estacionamento, rate:100, human:amigo, iagen:gpt_somente_no_tostring, alone:10, study:400

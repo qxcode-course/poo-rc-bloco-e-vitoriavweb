@@ -23,11 +23,12 @@ class Veiculo(ABC):
         pass
 
     def __str__(self):
-        pass
+        sla = self.horaentrada if self.horaentrada is not None else "-"
+        return f"{self.tipo} : {self.id} : {sla}"
 
 class Bike(Veiculo):
     def __init__(self, id:str):
-        super().__init__(id)
+        super().__init__(id, "Bike")
 
     def calcularvalor(self, horasaida):
         if self.horaentrada is None:
@@ -36,7 +37,7 @@ class Bike(Veiculo):
     
 class Moto(Veiculo):
     def __init__(self, id: str):
-        super().__init__(id)
+        super().__init__(id, "Moto")
 
     def calcularvalor(self, horasaida):
         if self.horaentrada is None:
@@ -46,7 +47,7 @@ class Moto(Veiculo):
     
 class Carro(Veiculo):
     def __init__(self, id:str):
-        super().__init__(id )
+        super().__init__(id, "Carro" )
 
     def calcularvalor(self, horasaida):
         if self.horaentrada is None:
@@ -59,49 +60,42 @@ class Carro(Veiculo):
 class Estacionamento:
     def __init__(self):
         self.veiculos = []
-        self.horaatual = None
-
-    
-'''   
-  
-class Estacionamento:
-    def __init__(self):
-        self.veiculos = []
         self.horaatual = 0
 
-    def __str__(self):
-        lines = []
-        for v in self.veiculos:
-            tipo = v.gettipo().rjust(10, "_")
-            vid  = v.getid().rjust(10, "_")
-            lines.append(f"{tipo} : {vid} : {v.getentrada()}")
-        lines.append(f"Hora atual: {self.horaatual}")
-        return "\n".join(lines)
-
-    def procurarveiculo(self,id:str) -> int:
-        for i, v in enumerate(self.veiculos):
-            if v.getid()==id:
+    def procurar(self, id:str)->int:
+        for i, c in enumerate(self.veiculos):
+            if c.getid() == id:
                 return i
-        return -1
-
+        return -1 
+    
     def estacionar(self, veiculo: Veiculo):
-        if self.procurarveiculo(veiculo.getid()) != -1:
-            raise ValueError(f"{veiculo.getid()}")
+        if self.procurar(veiculo.getid()) != -1:
+            return
         veiculo.setentrada(self.horaatual)
         self.veiculos.append(veiculo)
 
-
-    def pagar(self, id:str):
-        sla = self.procurarveiculo(id)
-        if sla == -1:
+    def pagar(self,id:str):
+        pag = self.procurar(id)
+        if pag == -1:
             return
-        v = self.veiculos.pop(sla)
-        entrada = v.getentrada()
+        c = self.veiculos.pop(pag)
+        entrada = c.getentrada()
         saida = self.horaatual
-        valor = v.calcularvalor(saida)
-        print(f"{v.gettipo()} chegou {entrada} saiu {saida}. Pagar R$ {valor:.2f}")
+        valor = c.calcularvalor(saida)
+        print(f"{c.gettipo()} chegou {entrada} saiu {saida}. Pagar R$ {valor:.2f}")
 
- '''
+    def __str__(self):
+        lines = []
+        for c in self.veiculos:
+            tipo = c.gettipo().rjust(10).replace(" ", "_")
+            vid = c.getid().rjust(10).replace(" ", "_")
+            ent = str(c.getentrada()).rjust(2)
+            lines.append(f"{tipo} : {vid} : {ent}")
+
+        lines.append(f"Hora atual: {self.horaatual}")
+        return "\n".join(lines)   
+        
+
 def main():
     estacionamento = Estacionamento()
 
@@ -114,24 +108,23 @@ def main():
             break
         elif args[0] == "show":
             print(estacionamento)
-        elif args[0] == "tempo":
-            estacionamento.horaatual += int(args[1])
         elif args[0] == "estacionar":
             tipo = args[1]
             id = args[2]
 
             if tipo == "bike":
-                v = Bike(id)
+                c = Bike(id)
             elif tipo == "moto":
-                v = Moto(id)
+                c = Moto(id)
             elif tipo == "carro":
-                v = Carro(id)
-            else:
+                c = Carro(id)
+            else: 
                 continue
-            estacionamento.estacionar(v)
+            estacionamento.estacionar(c)
+        elif args[0] == "tempo":
+            estacionamento.horaatual += int(args[1])
         elif args[0] == "pagar":
             id = args[1]
             estacionamento.pagar(id)
-
 
 main()

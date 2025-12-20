@@ -21,7 +21,8 @@ expanded:
 tasks:
   poo@zoo: '{rate:100, alone:10, study:160}'
   poo@pagamento: '{rate:100, alone:10, study:160}'
-  poo@estacionamento: '{human:amigo, iagen:gpt_com_erros, alone:7, study:300}'
+  poo@estacionamento: '{rate:100, human:amigo, iagen:gpt_somente_no_tostring, alone:10,
+    study:400}'
 flags:
   quests: 0
   tracks: 0
@@ -29,4 +30,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@estacionamento
+selected: poo@shapes
